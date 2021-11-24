@@ -16,7 +16,9 @@ const TopTracks = (props) => {
               <div>{track.artist}</div>
             </div>
             <Link href={track.externalUrl}>
-              <FaPlay size={20} color={"green"} />
+              <a>
+                <FaPlay size={20} color={"green"} />
+              </a>
             </Link>
           </div>
         );

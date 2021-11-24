@@ -15,7 +15,9 @@ const TopArtists = (props) => {
             <div>
               <Image src={artist.imageUrl} width="240" height="240" />
               <Link href={artist.externalUrl}>
-                <FaPlay size={20} color={"green"} />
+                <a>
+                  <FaPlay size={20} color={"green"} />
+                </a>
               </Link>
             </div>
             <div>{artist.name}</div>
