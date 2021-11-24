@@ -16,7 +16,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   if (session) {
     return {
       redirect: {
-        destination: "/PlaylistPage",
+        destination: "/Profile",
         permanent: false,
       },
     };
