@@ -2,17 +2,21 @@ import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/client";
 import nookies from "nookies";
 import { api } from "../../services/api";
+import Link from "next/link";
 type SessionProps = {
   session: { user: { name: string; email: string; image: string } };
 };
 
-const PlaylistPage = ({ session }: SessionProps) => {
+const Profile = ({ session }: SessionProps) => {
   const { user } = session;
   return (
     <>
       {" "}
       <div>Profile Page </div>
       <p>Bem vindo {user.name}</p>
+      <Link href={"/TopArtists"}>
+        <a>Ver meus Top Artists</a>
+      </Link>
     </>
   );
 };
@@ -51,4 +55,4 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   };
 };
 
-export default PlaylistPage;
+export default Profile;

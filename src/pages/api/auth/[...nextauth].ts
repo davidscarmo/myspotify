@@ -2,7 +2,8 @@ import NextAuth from "next-auth";
 import Providers from "next-auth/providers";
 import Cookies from "cookies";
 
-var scope = "user-top-read user-read-private user-read-email user-read-currently-playing";
+var scope =
+  "user-top-read user-read-private user-read-email user-read-currently-playing";
 const NextAuthOptions = (req, res) => ({
   providers: [
     Providers.Spotify({
@@ -13,7 +14,7 @@ const NextAuthOptions = (req, res) => ({
   ],
   callbacks: {
     async signIn(user, account, profile) {
-      try {  
+      try {
         const cookies = new Cookies(req, res);
         cookies.set("next-auth.refreshToken", account.refreshToken, {
           httpOnly: true,
@@ -24,8 +25,7 @@ const NextAuthOptions = (req, res) => ({
         return false;
       }
     },
-    async redirect(url) {
-      url = "http://localhost:3000/Profile";
+    async redirect(url = "http://localhost:3000/Profile") {
       return url;
     },
     // session: async (session, profile) => {
