@@ -1,12 +1,10 @@
 import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/client";
 import nookies from "nookies";
-import { api } from "../../services/api";
 import Link from "next/link";
 type SessionProps = {
   session: { user: { name: string; email: string; image: string } };
 };
-
 const Profile = ({ session }: SessionProps) => {
   const { user } = session;
   return (
@@ -16,6 +14,10 @@ const Profile = ({ session }: SessionProps) => {
       <p>Bem vindo {user.name}</p>
       <Link href={"/TopArtists"}>
         <a>Ver meus Top Artists</a>
+      </Link>
+      <br />
+      <Link href={"/TopTracks"}>
+        <a>Ver Músicas Mais Ouvidas</a>
       </Link>
     </>
   );
