@@ -2,23 +2,34 @@ import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/client";
 import nookies from "nookies";
 import Link from "next/link";
+import styles from "./styles.module.scss";
+import { CardOption } from "../../Components/CardOption";
+
 type SessionProps = {
   session: { user: { name: string; email: string; image: string } };
 };
+
 const Home = ({ session }: SessionProps) => {
   const { user } = session;
   return (
     <>
       {" "}
-      <div>Profile Page </div>
-      <p>Bem vindo {user.name}</p>
-      <Link href={"/TopArtists"}>
-        <a>Ver meus Top Artists</a>
-      </Link>
-      <br />
-      <Link href={"/TopTracks"}>
-        <a>Ver Músicas Mais Ouvidas</a>
-      </Link>
+      <div className={styles.container}>
+        <div className={styles.cardArea}>
+          <CardOption
+            titleNumber={"20"}
+            link={"TopArtists"}
+            linkName={"Ver Artistas"}
+            defaultColorCard
+          />
+          <CardOption
+            titleNumber={"50"}
+            link={"TopTracks"}
+            linkName={"Ver Músicas"}
+            defaultColorCard={false}
+          />
+        </div>
+      </div>
     </>
   );
 };

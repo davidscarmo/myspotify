@@ -1,0 +1,42 @@
+.cardContainer {
+  height: 16rem;
+  width: 16rem;
+  background-color: #3f3d3d;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  &.cardNotDefaultColorContainer {
+    background-color: #1db954;
+  }
+  .cardTitleArea {
+    flex: 3.5;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    .cardTitle {
+      font-size: 2.2rem;
+      margin-top: 1.5rem;
+      max-height: 100%;
+      font-weight: 600;
+    }
+  }
+  .cardLink {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    background-color: #1db954;
+    font-weight: bold;
+    a {
+      display: inline-block;
+      margin-top: 0.75rem;
+    }
+
+    &.cardNotDefaultColorLink {
+      background-color: #3f3d3d;
+    }
+  }
+}
