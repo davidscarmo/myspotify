@@ -1,6 +1,7 @@
 .Header {
   background-color: #3f3d3d;
   color: #fff;
+  height: 5rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -8,7 +9,6 @@
   padding: 0 5rem;
   .logoArea {
     h1 {
-      height: 100%;
       span {
         color: #1db954;
       }
