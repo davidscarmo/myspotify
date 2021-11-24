@@ -1,0 +1,42 @@
+.container {
+  min-height: 100vh;
+  margin-top: -5rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .title {
+    font-size: 1.125rem;
+    font-weight: normal;
+    padding: 0 0.5rem;
+  }
+  .loginButton {
+    min-width: 16rem;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border: none;
+    height: 3.2rem;
+    background-color: #1db954;
+    .spotifyLogoArea {
+      background-color: #3f3d3d;
+      width: 25%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.25rem;
+    }
+    .buttonText {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      color: #fff;
+      font-size: 1.275rem;
+      font-weight: bold;
+    }
+  }
+}

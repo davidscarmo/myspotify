@@ -25,7 +25,7 @@ const NextAuthOptions = (req, res) => ({
         return false;
       }
     },
-    async redirect(url = "http://localhost:3000/Profile") {
+    async redirect(url = "http://localhost:3000/Home") {
       return url;
     },
     // session: async (session, profile) => {

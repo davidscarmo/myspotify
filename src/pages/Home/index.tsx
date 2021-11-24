@@ -5,7 +5,7 @@ import Link from "next/link";
 type SessionProps = {
   session: { user: { name: string; email: string; image: string } };
 };
-const Profile = ({ session }: SessionProps) => {
+const Home = ({ session }: SessionProps) => {
   const { user } = session;
   return (
     <>
@@ -57,4 +57,4 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   };
 };
 
-export default Profile;
+export default Home;
