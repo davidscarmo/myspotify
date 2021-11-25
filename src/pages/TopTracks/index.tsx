@@ -21,8 +21,8 @@ const TopTracks = (props: tracksProps) => {
     <div className={styles.container}>
       <div className={styles.title}>
         {" "}
-        <h2>Se liga no seu top 50 de 2021</h2>
-        <div>
+        <h2>Confira o seu top 50 de 2021</h2>
+        <div className={styles.buttonbackArea}>
           <Link href={"/Home"}>
             <button>
               Voltar <FaArrowLeft />

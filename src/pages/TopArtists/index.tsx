@@ -1,30 +1,42 @@
 import { GetServerSideProps } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import { FaPlay } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
+import { CardArtist } from "../../Components/CardArtist";
+import styles from "./styles.module.scss";
 
-const TopArtists = (props) => {
+type artistProps = {
+  id: string;
+  name: string;
+  artist: string;
+  imageUrl: string;
+  externalUrl: string;
+};
+
+type artistsProps = {
+  artists: { getTopTwentyArtists: artistProps[] };
+};
+const TopArtists = (props: artistsProps) => {
   const { getTopTwentyArtists } = props.artists;
   console.log(getTopTwentyArtists);
   return (
-    <>
-      <p>Top Artists</p>
-      {getTopTwentyArtists.map((artist) => {
-        return (
-          <div>
-            <div>
-              <Image src={artist.imageUrl} width="240" height="240" />
-              <Link href={artist.externalUrl}>
-                <a>
-                  <FaPlay size={20} color={"green"} />
-                </a>
-              </Link>
-            </div>
-            <div>{artist.name}</div>
-          </div>
-        );
-      })}
-    </>
+    <div className={styles.container}>
+      <div className={styles.title}>
+        {" "}
+        <h2>Os seus top artistas de 2021</h2>
+        <div className={styles.buttonbackArea}>
+          <Link href={"/Home"}>
+            <button>
+              Voltar <FaArrowLeft />
+            </button>
+          </Link>
+        </div>
+      </div>
+      <div className={styles.artistsCardArea}>
+        {getTopTwentyArtists.map((artist) => {
+          return <CardArtist key={artist.id} {...artist} />;
+        })}
+      </div>
+    </div>
   );
 };
 

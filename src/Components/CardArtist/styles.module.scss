@@ -1,0 +1,29 @@
+.card {
+  margin-top: 2rem;
+  .imgButtonArea {
+    &:hover {
+      .playButton {
+        opacity: 1;
+      }
+    }
+    .playButton {
+      display: block;
+      position: absolute;
+      background-color: #1db954;
+      margin: -7.5rem auto auto 5rem;
+      height: 4rem;
+      width: 4rem;
+      opacity: 0;
+      border-radius: 5rem;
+      border: none;
+      transition: 0.5s opacity;
+      svg {
+        margin: 0 auto;
+      }
+    }
+  }
+  .artistName {
+    font-weight: 500;
+    color: #3f3d3d;
+  }
+}
