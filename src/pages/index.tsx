@@ -9,7 +9,8 @@ export default function Login({ session }) {
       {!session && (
         <>
           <h2 className={styles.title}>
-            Faça o login e veja as suas músicas e artistas mais escutados do ano.
+            Faça o login e veja as suas músicas e artistas mais escutados do
+            ano.
           </h2>
           <button
             className={styles.loginButton}
@@ -19,10 +20,7 @@ export default function Login({ session }) {
             <div className={styles.spotifyLogoArea}>
               <Image src={"/spotifyLogo.svg"} width={32} height={32} />
             </div>
-            <div className={styles.buttonText}>
-              {" "}
-               entrar
-            </div>
+            <div className={styles.buttonText}> entrar</div>
           </button>
         </>
       )}
@@ -30,7 +28,8 @@ export default function Login({ session }) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const { req } = ctx;
   const session = await getSession({ req });
   if (session) {
     return {

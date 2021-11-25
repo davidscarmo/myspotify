@@ -1,8 +1,8 @@
 export default async function handler(req, res) {
   const { refreshToken } = req.query;
   console.log(refreshToken);
-  const clientId = process.env.CLIENT_ID;
-  const clientSecret = process.env.CLIENT_SECRET;
+  const clientId = process.env.SPOTIFY_CLIENT_ID;
+  const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
 
   const basic = Buffer.from(`${clientId}:${clientSecret}`).toString("base64");
 

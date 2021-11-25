@@ -1,4 +1,5 @@
 import { GetServerSideProps } from "next";
+import { getSession } from "next-auth/client";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
 import { CardArtist } from "../../Components/CardArtist";
@@ -44,10 +45,21 @@ export default TopArtists;
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const { req } = ctx;
+
+  const session = await getSession({ req });
+  if (session) {
+    return {
+      redirect: {
+        destination: "/Home",
+        permanent: false,
+      },
+    };
+  }
+
   const cookies = req.cookies;
 
   const getTopArtists = await fetch(
-    "http://localhost:3000/api/getTopArtists?" +
+    `${process.env.BASE_URL}/api/getTopArtists?` +
       new URLSearchParams({ accessToken: cookies["next-auth.access-token"] })
   ).then((response) => response.json());
   console.log(getTopArtists);
