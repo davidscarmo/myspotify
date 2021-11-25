@@ -7,7 +7,7 @@ type artistProps = {
 };
 export default async function handler(req, res) {
   const { accessToken } = req.query;
-  console.log(accessToken);
+
   try {
     const response = await api.get("/me/top/artists?limit=20", {
       headers: {
@@ -26,7 +26,7 @@ export default async function handler(req, res) {
     });
     return res.status(200).json({ getTopTwentyArtists });
   } catch (err) {
-    console.log(err.message);
+  
     return res.status(401).json({ error: err.message });
   }
 }

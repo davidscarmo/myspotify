@@ -1,10 +1,8 @@
 import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/client";
-import Image from "next/image";
 import Link from "next/link";
-import { FaPlay, FaArrowLeft } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
 import { CardTrack } from "../../Components/CardTrack";
-import getTopTracks from "../api/getTopTracks";
 import styles from "./styles.module.scss";
 type trackProps = {
   id: string;
@@ -47,10 +45,10 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const { req } = ctx;
 
   const session = await getSession({ req });
-  if (session) {
+  if (!session) {
     return {
       redirect: {
-        destination: "/Home",
+        destination: "/",
         permanent: false,
       },
     };
@@ -61,7 +59,6 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     `${process.env.BASE_URL}/api/getTopTracks?` +
       new URLSearchParams({ accessToken: cookies["next-auth.access-token"] })
   ).then((response) => response.json());
-  console.log(getTopTracks);
   return {
     props: { getTopTracks },
   };

@@ -18,7 +18,7 @@ type artistsProps = {
 };
 const TopArtists = (props: artistsProps) => {
   const { getTopTwentyArtists } = props.artists;
-  console.log(getTopTwentyArtists);
+
   return (
     <div className={styles.container}>
       <div className={styles.title}>
@@ -47,10 +47,10 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const { req } = ctx;
 
   const session = await getSession({ req });
-  if (session) {
+  if (!session) {
     return {
       redirect: {
-        destination: "/Home",
+        destination: "/",
         permanent: false,
       },
     };
@@ -62,7 +62,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     `${process.env.BASE_URL}/api/getTopArtists?` +
       new URLSearchParams({ accessToken: cookies["next-auth.access-token"] })
   ).then((response) => response.json());
-  console.log(getTopArtists);
+
   return {
     props: { artists: getTopArtists },
   };

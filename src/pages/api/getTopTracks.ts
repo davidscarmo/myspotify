@@ -15,7 +15,7 @@ export default async function handler(req, res) {
       },
     });
     const { items } = response.data;
-    console.log(items);
+
     const getTopFiftyTracks = items.map((item: trackProps) => {
       return {
         externalUrl: item.external_urls.spotify,
@@ -27,7 +27,6 @@ export default async function handler(req, res) {
     });
     return res.status(200).json({ tracks: getTopFiftyTracks });
   } catch (err) {
-    console.log(err.message);
     return res.status(401).json({ error: err.message });
   }
 }

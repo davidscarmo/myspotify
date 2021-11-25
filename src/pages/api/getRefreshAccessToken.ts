@@ -1,6 +1,6 @@
 export default async function handler(req, res) {
   const { refreshToken } = req.query;
-  console.log(refreshToken);
+
   const clientId = process.env.SPOTIFY_CLIENT_ID;
   const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
 
@@ -17,6 +17,6 @@ export default async function handler(req, res) {
       refresh_token: refreshToken,
     }),
   }).then((response) => response.json());
-  console.log(getToken);
+  
   res.status(200).json({ accessToken: getToken.access_token });
 }

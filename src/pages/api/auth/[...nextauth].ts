@@ -28,13 +28,6 @@ const NextAuthOptions = (req, res) => ({
     async redirect(url = `${process.env.BASE_URL}/Home`) {
       return url;
     },
-    // session: async (session, profile) => {
-    //   console.log("In session");
-    //   console.log(session);
-    //   console.log(profile);
-
-    //   return Promise.resolve(session);
-    // },
   },
 });
 
