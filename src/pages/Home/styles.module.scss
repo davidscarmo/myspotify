@@ -11,3 +11,14 @@
     justify-content: center;
   }
 }
+
+@media (max-width: 650px) {
+  .container {  
+    margin-top: 0;
+    .cardArea {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
