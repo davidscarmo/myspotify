@@ -16,10 +16,17 @@
   }
   .userInfoLogOutArea {
     div {
+      font-size: 1rem;
       span {
         color: #1db954;
         font-weight: bold;
         margin: 0 0.5rem;
+      }
+      button {
+        color: #fff;
+        border: none;
+        background: none;
+        font-size: 1rem;
       }
     }
   }
