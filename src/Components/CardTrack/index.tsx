@@ -12,7 +12,7 @@ export const CardTrack = (track: trackProps) => {
   return (
     <div className={styles.card}>
       <div className={styles.imageArea}>
-        <Image src={track.imageUrl} width="100" height="100" />
+        <Image src={track.imageUrl} width="100" height="100" className={styles.image} />
       </div>
       <div className={styles.titleArtistArea}>
         <div className={styles.trackTitle}>

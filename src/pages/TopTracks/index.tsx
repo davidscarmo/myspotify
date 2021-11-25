@@ -36,11 +36,8 @@ const TopTracks = (props: tracksProps) => {
           return (
             <CardTrack
               key={track.id}
-              artist={track.artist}
-              name={track.name}
               index={index}
-              imageUrl={track.imageUrl}
-              externalUrl={track.externalUrl}
+              {...track}
             />
           );
         })}

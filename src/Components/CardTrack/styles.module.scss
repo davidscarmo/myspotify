@@ -7,7 +7,7 @@
   .imageArea {
     img {
       max-width: 100%;
-      height: auto;
+      height: 100%;
     }
   }
   .titleArtistArea {
@@ -33,6 +33,46 @@
       background-color: #1db954;
       svg {
         margin: 0 auto;
+      }
+    }
+  }
+}
+@media (max-width: 620px) {
+  .card {
+    grid-template-columns: 1fr 2fr 0.7fr;
+    .imageArea {
+      .image {
+        max-width: 100%;
+        height: 100%;
+      }
+    }
+    .titleArtistArea {
+      .trackTitle {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+@media (max-width: 450px) {
+  .card {
+    .imageArea {
+      margin-bottom: -0.225rem;
+      .image {
+      }
+    }
+    .titleArtistArea {
+      margin-left: 0.4rem;
+      .trackTitle {
+        font-size: 0.75rem;
+      }
+      .artist {
+        font-size: 0.75rem;
+      }
+    }
+    .playButtonArea {
+      button {
+        height: 2.5rem;
+        width: 2.5rem;
       }
     }
   }
