@@ -31,3 +31,24 @@
     }
   }
 }
+
+@media (max-width: 520px) {
+  .Header {
+    padding: 0 2rem;
+  }
+}
+
+@media (max-width: 376px) {
+  .Header {
+    padding: 0 1rem;
+    font-size: 0.7rem;
+    .userInfoLogOutArea {
+      div {
+        button {
+          
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
