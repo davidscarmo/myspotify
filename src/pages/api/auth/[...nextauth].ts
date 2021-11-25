@@ -1,7 +1,6 @@
 import NextAuth from "next-auth";
 import Providers from "next-auth/providers";
-import Cookies from "cookies";
-
+import nookies from "nookies";
 var scope =
   "user-top-read user-read-private user-read-email user-read-currently-playing";
 const NextAuthOptions = (req, res) => ({
@@ -14,16 +13,11 @@ const NextAuthOptions = (req, res) => ({
   ],
   callbacks: {
     async signIn(user, account, profile) {
-      try {
-        const cookies = new Cookies(req, res);
-        cookies.set("next-auth.refreshToken", account.refreshToken, {
-          httpOnly: true,
-        });
-        return true;
-      } catch (err) {
-        console.log(err);
-        return false;
-      }
+      nookies.set(null, "next-auth.refreshToken", account.refreshToken, {
+        maxAge: 30 * 24 * 60 * 60,
+        path: "/",
+      });
+      return true;
     },
     async redirect(url = `${process.env.BASE_URL}/Home`) {
       return url;

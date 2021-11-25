@@ -53,6 +53,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
       },
     };
   }
+  console.log(session);
   const cookies = req.cookies;
 
   const getTopTracks = await fetch(
