@@ -7,8 +7,8 @@ var scope =
 const NextAuthOptions = (req, res) => ({
   providers: [
     Providers.Spotify({
-      clientId: process.env.SPOTIFY_CLIENT_ID,
-      clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
+      clientId: process.env.CLIENT_ID,
+      clientSecret: process.env.CLIENT_SECRET,
       scope,
     }),
   ],
@@ -28,6 +28,13 @@ const NextAuthOptions = (req, res) => ({
     async redirect(url = `${process.env.BASE_URL}/Home`) {
       return url;
     },
+    // session: async (session, profile) => {
+    //   console.log("In session");
+    //   console.log(session);
+    //   console.log(profile);
+
+    //   return Promise.resolve(session);
+    // },
   },
 });
 
