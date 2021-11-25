@@ -4,7 +4,6 @@ import { signOut } from "next-auth/client";
 export const Header = () => {
   const handleLogout = async () => {
     signOut({ callbackUrl: "/", redirect: true });
-
     destroyCookie({}, "next-auth.access-token", { path: "/" });
   };
   return (

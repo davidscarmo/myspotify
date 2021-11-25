@@ -1,0 +1,36 @@
+.container {
+  min-height: 100vh;
+  max-width: 40rem;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  margin: 0 auto;
+  .title {
+    height: 7rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    h2 {
+      font-weight: 600;
+    }
+    button {
+      display: flex;
+      justify-content: center;
+      border: none;
+      background: none;
+      font-weight: 600;
+      color: #1db954;
+      svg {
+        margin-left: 0.3rem;
+      }
+    }
+  }
+  .trackCardArea {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}

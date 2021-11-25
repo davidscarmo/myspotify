@@ -1,0 +1,39 @@
+.card {
+  display: grid;
+  grid-template-columns: 1fr 3.5fr 0.7fr;
+  background-color: #3f3d3d;
+  margin-bottom: 1rem;
+  max-height: 6.25rem;
+  .imageArea {
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  .titleArtistArea {
+    margin-top: 0.5rem;
+    color: #fff;
+    .trackTitle {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  }
+  .playButtonArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    button {
+      border-radius: 50%;
+      border: none;
+      height: 3rem;
+      width: 3rem;
+      display: flex;
+      align-items: center;
+      background-color: #1db954;
+      svg {
+        margin: 0 auto;
+      }
+    }
+  }
+}
