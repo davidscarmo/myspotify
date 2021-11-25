@@ -52,7 +52,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const cookies = req.cookies;
 
   const getRefreshAccessToken = await fetch(
-    "http://localhost:3000/api/getRefreshAccessToken?" +
+    `${process.env.BASE_URL}/api/getRefreshAccessToken?` +
       new URLSearchParams({ refreshToken: cookies["next-auth.refreshToken"] })
   ).then((response) => response.json());
 
