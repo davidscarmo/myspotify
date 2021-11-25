@@ -1,9 +1,10 @@
 import NextAuth from "next-auth";
 import Providers from "next-auth/providers";
-import nookies from "nookies";
+import Cookies from "cookies";
+
 var scope =
   "user-top-read user-read-private user-read-email user-read-currently-playing";
-export default NextAuth({
+const NextAuthOptions = (req, res) => ({
   providers: [
     Providers.Spotify({
       clientId: process.env.SPOTIFY_CLIENT_ID,
@@ -13,16 +14,14 @@ export default NextAuth({
   ],
   callbacks: {
     async signIn(user, account, profile) {
-      const setRefreshToken = async () => {
-        nookies.set(null, "next-auth.refreshToken", account.refreshToken, {
-          maxAge: 30 * 24 * 60 * 60,
-          path: "/",
-        });
+      const setCookies = async () => {
+        const cookies = new Cookies(req, res);
+        cookies.set("next-auth.refreshToken", account.refreshToken);
       };
-      await setRefreshToken();
+      await setCookies();
       return true;
     },
-    async redirect(url = `${process.env.BASE_URL}/Home`) {
+    async redirect(url = `${process.env.BASE_URL}/getRefreshAcessToken`) {
       return url;
     },
     // session: async (session, profile) => {
@@ -32,13 +31,9 @@ export default NextAuth({
 
     //   return Promise.resolve(session);
     // },
-    async jwt(token, user, account, profile, isNewUser) {
-      console.log(account);
-      return token;
-    },
   },
 });
 
-// export default (req, res) => {
-//   return NextAuth(req, res, NextAuthOptions(req, res));
-// };
+export default (req, res) => {
+  return NextAuth(req, res, NextAuthOptions(req, res));
+};
