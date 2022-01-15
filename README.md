@@ -53,11 +53,12 @@ Mobile
   Necessário a criação de uma .env.local com os dados adquiridos no dashboard da Api do Spotify. <br>
   Spotify Dashboard: <a> https://developer.spotify.com/dashboard/login </a>
   </p>
-  <code> 
-  SPOTIFY_CLIENT_ID= <br/>
-  SPOTIFY_CLIENT_SECRET= <br/>
-  BASE_URL=
-  </code>
+  <ul> 
+    <h4>Variáveis a serem criadas na .env.local </h4>
+  <li>SPOTIFY_CLIENT_ID=</li> 
+  <li>SPOTIFY_CLIENT_SECRET=</li> 
+  <li>BASE_URL=</li>
+    </ul>
   <div>
   <ol>
   <h3>Passos: </h3>
