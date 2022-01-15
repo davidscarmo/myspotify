@@ -5,17 +5,17 @@
 Aplicação que permite ao usuário conferir os seus 20 artistas e 50 músicas mais ouvidas no Spotify durante o corrente ano.
 Projeto desenvolvido com o intuito de comprender melhor a utilização do API-Auth do NextJS e o consumo de APIS que utilizam OAauth. 
 </p>
-<hr>
+
 <section>
   <h2>Funcionalidade </h2>
   <p>A aplicação lista músicas e artistas beseados no dados fornecidos pela api Spotify de acordo com a conta do usuário  </p>
 </section>
-<hr/>
+
 <section>
 <h2> 
  Layout
 </h2>
-<hr>
+
 
 <div>
   <h2> 
@@ -38,7 +38,7 @@ Mobile
 
 </div>
 </section>
-<hr />
+
 <section>
   <h2> Tecnologias Utilizadas </h2>
   <ul>
@@ -46,7 +46,7 @@ Mobile
     <li>SASS</li>
   </ul>
 </section>
-<hr />
+
 <section> 
   <h2>Pré-Requisitos e Iniciando a aplicação </h2>
   <p>É necessário a criação de uma conta no spotify como developer e criar uma aplicação para o funcionamento da aplicação. <br>
