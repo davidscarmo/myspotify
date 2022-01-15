@@ -1,34 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center"> 
+  my<span style="color: #1db954">Spotify<span>
+</h1>
+<p>
+Aplicação que permite ao usuário conferir os seus 20 artistas e 50 músicas mais ouvidas no Spotify durante o corrente ano.
+Projeto desenvolvido com o intuito de comprender melhor a utilização do API-Auth do NextJS e o consumo de APIS que utilizam OAauth. 
+</p>
+<hr>
+<section>
+  <h2>Funcionalidade </h2>
+  <p>A aplicação lista músicas e artistas beseados no dados fornecidos pela api Spotify de acordo com a conta do usuário  </p>
+</section>
+<hr/>
+<section>
+<h2> 
+ Layout
+</h2>
+<hr>
 
-## Getting Started
+<div>
+  <h2> 
+    Web
+  </h2>
+  <img src="./public/webScreen1.png" width="600" height="297" alt="Página de login"/>
+<img src="./public/webScreen2.png" width="600" height="297"alt="Página de login"/>
+<img src="./public/webScreen3.png" width="600" height="297"/>
+<img src="./public/webScreen4.png" width="600" height="297"/>
+<img src="./public/webScreen5.png" width="600" height="297"/>
+</div>
+<div>
+<h2>
+Mobile
+</h2>
+<img src="./public/mobileScreen1.png" width="300" height="500" alt="Página de login"/>
+<img src="./public/mobileScreen2.png" width="300" height="500" alt="Página de login"/>
+<img src="./public/mobileScreen3.png" width="300" height="500" alt="Página de login"/>
+<img src="./public/mobileScreen4.png" width="300" height="500" alt="Página de login"/>
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+</div>
+</section>
+<hr />
+<section>
+  <h2> Tecnologias Utilizadas </h2>
+  <ul>
+    <li>NextJS</li>
+    <li>SASS</li>
+  </ul>
+</section>
+<hr />
+<section> 
+  <h2>Pré-Requisitos e Iniciando a aplicação </h2>
+  <p>É necessário a criação de uma conta no spotify como developer e criar uma aplicação para o funcionamento da aplicação. <br>
+  Necessário a criação de uma .env.local com os dados adquiridos no dashboard da Api do Spotify. <br>
+  Spotify Dashboard: <a> https://developer.spotify.com/dashboard/login </a>
+  </p>
+  <code> 
+  SPOTIFY_CLIENT_ID= <br/>
+  SPOTIFY_CLIENT_SECRET= <br/>
+  BASE_URL=
+  </code>
+  <div>
+  <ol>
+  <h3>Passos: </h3>
+    <li>Crie o seu app no dashboard da api spotify </li>
+    <li>Insira a URL de callback http://localhost:3000/api/auth/callback/spotify no app criado no dashboard </li>
+    <li>Clone a aplicação</li>
+    <li>Instale as dependências</li>
+    <li>Crie o .env.local e informe os dados do seu Spotify APP</li>
+    <li>Rode a aplicação com yarn dev ou npm run dev</li>
+  </ol>
+  </div>
+</section
