@@ -1,5 +1,7 @@
 import styles from "./styles.module.scss";
 import Link from "next/link";
+import { getYear } from "../../utils/getYear";
+
 type cardProps = {
   titleNumber: string;
   link: string;
@@ -7,8 +9,6 @@ type cardProps = {
   defaultColorCard: boolean;
 };
 export const CardOption = (card: cardProps) => {
-  const getDate = new Date();
-  const year = getDate.getFullYear();
   return (
     <>
       <div
@@ -20,7 +20,7 @@ export const CardOption = (card: cardProps) => {
           <div className={styles.cardTitle}>
             Top <br />
             {card.titleNumber} <br />
-            {year} <br />
+            {getYear()} <br />
           </div>
         </div>
         <div

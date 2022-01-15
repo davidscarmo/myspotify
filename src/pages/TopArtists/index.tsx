@@ -1,9 +1,10 @@
+import Link from "next/link";
+import styles from "./styles.module.scss";
 import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/client";
-import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
 import { CardArtist } from "../../Components/CardArtist";
-import styles from "./styles.module.scss";
+import { getYear } from "../../utils/getYear";
 
 type artistProps = {
   id: string;
@@ -23,9 +24,9 @@ const TopArtists = (props: artistsProps) => {
     <div className={styles.container}>
       <div className={styles.title}>
         {" "}
-        <h2>Os seus top artistas de 2021</h2>
+        <h2>Os seus top artistas de {getYear()}</h2>
         <div className={styles.buttonbackArea}>
-          <Link href={"/Home"}>
+          <Link href={"/Home"} passHref>
             <button>
               Voltar <FaArrowLeft />
             </button>

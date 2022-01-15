@@ -1,16 +1,10 @@
 import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/client";
 import nookies from "nookies";
-import Link from "next/link";
-import styles from "./styles.module.scss";
 import { CardOption } from "../../Components/CardOption";
+import styles from "./styles.module.scss";
 
-type SessionProps = {
-  session: { user: { name: string; email: string; image: string } };
-};
-
-const Home = ({ session }: SessionProps) => {
-  const { user } = session;
+const Home = () => {
   return (
     <>
       {" "}
@@ -64,7 +58,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   });
 
   return {
-    props: { session },
+    props: {},
   };
 };
 

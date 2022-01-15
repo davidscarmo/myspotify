@@ -3,7 +3,10 @@ import { getSession } from "next-auth/client";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
 import { CardTrack } from "../../Components/CardTrack";
+import { getYear } from "../../utils/getYear";
 import styles from "./styles.module.scss";
+
+
 type trackProps = {
   id: string;
   name: string;
@@ -20,9 +23,9 @@ const TopTracks = (props: tracksProps) => {
     <div className={styles.container}>
       <div className={styles.title}>
         {" "}
-        <h2>Confira o seu top 50 de 2021</h2>
+        <h2>Confira o seu top 50 de {getYear()}</h2>
         <div className={styles.buttonbackArea}>
-          <Link href={"/Home"}>
+          <Link href={"/Home"} passHref>
             <button>
               Voltar <FaArrowLeft />
             </button>

@@ -18,7 +18,7 @@ export default function Login({ session }) {
           >
             {" "}
             <div className={styles.spotifyLogoArea}>
-              <Image src={"/spotifyLogo.svg"} width={32} height={32} />
+              <Image src={"/spotifyLogo.svg"} width={32} height={32} alt="Spotify Logo" />
             </div>
             <div className={styles.buttonText}> entrar</div>
           </button>
